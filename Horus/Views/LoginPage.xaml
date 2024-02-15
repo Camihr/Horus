@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Horus.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Horus.Controls"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#FFFFFF"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*">
+
+            <Grid HeightRequest="280">
+                <Frame
+                    Padding="0"
+                    CornerRadius="30"
+                    HeightRequest="280">
+
+                    <Image
+                        Aspect="AspectFill"
+                        Source="background" />
+                </Frame>
+
+                <StackLayout
+                    Padding="30"
+                    HorizontalOptions="Start"
+                    Orientation="Vertical"
+                    Spacing="5"
+                    VerticalOptions="End">
+
+                    <Label
+                        FontSize="22"
+                        Text="Bienvenido a"
+                        TextColor="#FFFFFF" />
+
+                    <Image
+                        HeightRequest="40"
+                        Source="logo_w" />
+
+                </StackLayout>
+            </Grid>
+
+
+            <StackLayout
+                Grid.Row="1"
+                Padding="40,20"
+                Spacing="20">
+
+                <StackLayout>
+                    <Label
+                        Style="{StaticResource EntryLabelStyle}"
+                        Text="Email" />
+
+                    <controls:MaterialEntry
+                        FocusedBorderColor="{StaticResource PrimaryColor}"
+                        Keyboard="Text"
+                        Text="{Binding User.Email}" />
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,30">
+                    <Label
+                        Style="{StaticResource EntryLabelStyle}"
+                        Text="Contraseña" />
+
+                    <controls:MaterialEntry
+                        FocusedBorderColor="{StaticResource PrimaryColor}"
+                        IsEntryPassword="True"
+                        Text="{Binding User.Password}" />
+
+                    <Label
+                        Style="{StaticResource EntryLabelStyle}"
+                        Text="Olvidaste la contraseña">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ShowAlertCommand}"
+                                CommandParameter="Olvidaste la contraseña" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+
+                <Button
+                    Command="{Binding LoginCommand}"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="Login" />
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    Spacing="40"
+                    VerticalOptions="Center">
+
+                    <Grid>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="{StaticResource LightGray}"
+                            CornerRadius="24"
+                            HasShadow="False"
+                            HeightRequest="48"
+                            Visual="{OnPlatform iOS=Material}"
+                            WidthRequest="48" />
+                        <StackLayout>
+                            <Image
+                                Margin="0,12,0,0"
+                                HeightRequest="24"
+                                Source="instagram_g" />
+                        </StackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ShowAlertCommand}"
+                                CommandParameter="Instagram" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <Grid>
+                        <Frame
+                            Padding="0"
+                            BackgroundColor="{StaticResource LightGray}"
+                            CornerRadius="24"
+                            HasShadow="False"
+                            HeightRequest="48"
+                            Visual="{OnPlatform iOS=Material}"
+                            WidthRequest="48" />
+                        <StackLayout>
+                            <Image
+                                Margin="0,12,0,0"
+                                HeightRequest="24"
+                                Source="facebook_g" />
+                        </StackLayout>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ShowAlertCommand}"
+                                CommandParameter="Facebook" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </StackLayout>
+
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="{StaticResource LightGray}"
+                    HasShadow="False"
+                    HeightRequest="1" />
+
+                <Button
+                    Command="{Binding ShowAlertCommand}"
+                    CommandParameter="Registrarme"
+                    Style="{StaticResource SecondaryButtonStyle}"
+                    Text="Registrarme" />
+
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

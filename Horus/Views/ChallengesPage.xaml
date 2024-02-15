@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Horus.Views.ChallengesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:viewModels="clr-namespace:Horus.ViewModels"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#FFFFFF"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto,Auto,Auto">
+        <Image
+            Margin="16,0"
+            HeightRequest="20"
+            HorizontalOptions="Start"
+            Source="back_b"
+            WidthRequest="20">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout
+            Grid.Row="1"
+            Padding="16,0"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                Style="{StaticResource TitlePageStyle}"
+                Text="Retos" />
+            <Label
+                FontSize="14"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="{Binding Completed}"
+                            TextColor="{StaticResource PrimaryColor}" />
+                        <Span
+                            Text="{Binding Total, StringFormat='/{0}'}"
+                            TextColor="{StaticResource DarkGray}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+        <ScrollView
+            Grid.Row="2"
+            Orientation="Vertical"
+            VerticalOptions="StartAndExpand">
+
+            <StackLayout
+                Padding="20"
+                BindableLayout.ItemTemplateSelector="{StaticResource ChallengeTemplateSelector}"
+                BindableLayout.ItemsSource="{Binding Challenges}"
+                Spacing="20"
+                VerticalOptions="Start" />
+
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

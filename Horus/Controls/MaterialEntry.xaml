@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="Horus.Controls.MaterialEntry"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Horus.Controls"
+    x:Name="this">
+    <Frame
+        x:Name="frame"
+        BindingContext="{x:Reference this}"
+        Style="{StaticResource FrameEntryStyle}">
+        <StackLayout
+            x:Name="stack"
+            Spacing="-15">
+            <Grid ColumnDefinitions="*,Auto">
+                <controls:ExtendedEntry
+                    x:Name="entry"
+                    Focused="ExtendedEntry_Focused"
+                    HasBorderLines="False"
+                    Keyboard="{Binding Keyboard}"
+                    Style="{StaticResource EntryStyle}"
+                    Text="{Binding Text}"
+                    Unfocused="ExtendedEntry_Unfocused" />
+                <Grid
+                    Grid.Column="1"
+                    IsVisible="{Binding IsEntryPassword}">
+                    <Image
+                        x:Name="imageHidePassword"
+                        HeightRequest="22"
+                        IsVisible="false"
+                        Source="eye_none_b"
+                        WidthRequest="22" />
+                    <Image
+                        x:Name="imageShowPassword"
+                        HeightRequest="22"
+                        Source="eye_b"
+                        WidthRequest="22" />
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </Frame>
+</ContentView>
