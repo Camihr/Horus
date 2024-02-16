@@ -7,6 +7,7 @@ using Xamarin.Forms.Platform.Android;
 using Horus.Controls;
 using Xamarin.Forms;
 
+[assembly: ExportRenderer(typeof(ExtendedEntry), typeof(ExtendedEntryRenderer))]
 namespace Horus.Droid.Renderers
 {
     public class ExtendedEntryRenderer : EntryRenderer
