@@ -124,7 +124,7 @@
             x:Key="FrameEntryStyle"
             TargetType="Frame">
             <Setter Property="BackgroundColor" Value="{StaticResource LightGray}" />
-            <Setter Property="Padding" Value="16, 2" />
+            <Setter Property="Padding" Value="16, 10" />
             <Setter Property="CornerRadius" Value="22" />
             <Setter Property="HasShadow" Value="False" />
             <Setter Property="Visual" Value="{OnPlatform iOS=Material}" />
