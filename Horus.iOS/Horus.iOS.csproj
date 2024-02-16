@@ -219,9 +219,6 @@
     <BundleResource Include="Resources\back_b%401x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\background%401x.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\eye_b%401x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -244,9 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\back_b%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\background%402x.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\eye_b%402x.png" />
@@ -273,9 +267,6 @@
     <BundleResource Include="Resources\back_b%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\background%403x.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\eye_b%403x.png" />
   </ItemGroup>
   <ItemGroup>
@@ -300,9 +291,6 @@
     <BundleResource Include="Resources\back_b.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\eye_b.png" />
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +304,18 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background%401x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
